@@ -25,19 +25,19 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_28_205938) do
 
   create_table "notifications", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "kind"
-    t.boolean "active"
+    t.string "kind", null: false
+    t.boolean "active", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "symptoms", force: :cascade do |t|
-    t.string "title"
-    t.string "category"
-    t.text "steps"
+    t.string "title", null: false
+    t.string "category", null: false
+    t.text "steps", null: false
     t.text "points"
-    t.boolean "should_see_doctor"
+    t.boolean "should_see_doctor", default: false, null: false
     t.string "source_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,10 +54,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_28_205938) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "encrypted_password"
-    t.boolean "notification_enabled"
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "encrypted_password", null: false
+    t.boolean "notification_enabled", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
