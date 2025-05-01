@@ -4,4 +4,3 @@ class Bookmark < ApplicationRecord
 
   validates :user_id, :symptom_id, presence: true
 end
-
