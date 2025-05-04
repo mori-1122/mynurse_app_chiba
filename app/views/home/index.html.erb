@@ -1,2 +1,23 @@
-<h1>仮のホーム</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container text-center py-5">
+  <!-- アプリ名 -->
+  <h1 class="display-4 fw-bold" style="color: #f48fb1;">
+    マイナース <i class="bi bi-heart-pulse"></i>
+  </h1>
+
+  <!-- キャッチコピー -->
+  <p class="lead mt-4">
+    「これって病院行くべき？」に、そっと答える安心。
+  </p>
+
+  <!-- メッセージ -->
+  <p class="mt-3 text-muted">
+    マイナーなケガ、トラブルに<br>
+    「私だけのナース」を持ち歩こう。
+  </p>
+
+  <!-- 導入ボタン -->
+  <div class="mt-5">
+    <%= link_to 'はじめる', new_user_registration_path, class: 'btn btn-lg btn-pink me-3' %>
+    <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-outline-secondary btn-lg' %>
+  </div>
+</div>
