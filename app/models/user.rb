@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   has_many :treatments, dependent: :destroy # #1人のユーザーが複数の治療記録を登録できる
   has_many :bookmarks, dependent: :destroy # #気になる症状を何件もブックマークできる
   has_many :notifications, dependent: :destroy
