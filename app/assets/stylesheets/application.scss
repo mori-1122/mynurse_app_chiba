@@ -1,0 +1,20 @@
+// Entry point for your Sass build
+
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons";
+@import "base";
+@import "buttons";
+@import "login";
+
+
+.alert-custom {
+  background-color: #ffe4b5;
+  border-left: 4px solid #ff9800;
+  padding: 12px;
+  margin: 1rem 0;
+}
+
+.text-pink {
+    color: #f48fb1;
+  }
+  
