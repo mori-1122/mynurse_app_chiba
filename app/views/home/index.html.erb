@@ -1,4 +1,4 @@
-<div class="container text-center py-5">
+<div class="container d-flex flex-column justify-content-center align-items-center text-center min-vh-100">
   <!-- アプリ名 -->
   <h1 class="display-4 fw-bold" style="color: #f48fb1;">
     マイナース <i class="bi bi-heart-pulse"></i>
@@ -17,11 +17,16 @@
 
   <!-- 導入ボタン -->
   <div class="mt-5">
-    <%= link_to 'はじめる', new_user_registration_path, class: 'btn btn-lg btn-pink me-3' %>
-    <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-outline-secondary btn-lg me-3' %>
-    <%= link_to  'ゲストログイン', guest_sign_in_path,
-              method: :post,
-              class: 'btn btn-violet btn-lg me-3',
-              form_class: 'd-inline' %>
+    <% unless user_signed_in? %> <%#  ログイン中のユーザーにはトップページで何も余計なボタンを見せないようにした%>
+      <%= link_to 'はじめる', new_user_registration_path, class: 'btn btn-lg btn-pink me-3'  %> <!-- 遷移する -->
+      <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-outline-secondary btn-lg me-3' %>
+      <%= link_to 'ゲストログイン', guest_sign_in_path,
+                method: :post,
+                data: { turbo: false }, 
+                class: 'btn btn-violet btn-lg me-3',
+                form_class: 'd-inline' %> <!-- なぜかlink_toだとエラーが出たため、ルーティング内で対応　-->
+    <% end %>
   </div>
 </div>
+
+
