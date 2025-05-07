@@ -1,0 +1,31 @@
+.flash-message {
+    position: fixed;  // 画面の固定位置に表示（スクロールしても見える）
+    top: 20px;
+    right: 20px;
+    z-index: 9999; // 前面に表示
+    max-width: 340px;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); // 影付きで浮き上がらせる
+    animation: fadeOut 2.5s forwards; // アニメーションで2.5秒後に消える
+    color: white;
+  }
+  
+  .flash-notice {
+    background-color: #f48fb1; // ピンク（成功・通知）
+    border: 1px solid #f06292;
+  }
+  
+  .flash-alert, .flash-error {
+    background-color: #f8d7da; // 警告系（赤み）
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  
+  .flash-success {
+    background-color: #81d4fa; // 水色（成功系）
+    border: 1px solid #4fc3f7;
+  }
+  
