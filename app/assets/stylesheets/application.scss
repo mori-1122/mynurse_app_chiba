@@ -7,20 +7,6 @@
 @import "login"; //ログインスタイル
 @import "flash"; //フラッシュ
 
-.alert-custom { //エラー表示
-  background-color: #ffe4b5;
-  border-left: 4px solid #ff9800;
-  padding: 12px;
-  margin: 1rem 0;
-}
-
 .text-pink { //マイナースカラーにする
     color: #f48fb1;
   }
-  
-// フェードアウトのアニメーション定義
-@keyframes fadeOut {
-  0%   { opacity: 1; }  // 最初は表示
-  80%  { opacity: 1; }  // 80%の間は表示状態のまま
-  100% { opacity: 0; display: none; } // 最後に透明にして非表示にする
-}
