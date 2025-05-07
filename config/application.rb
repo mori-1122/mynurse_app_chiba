@@ -12,7 +12,6 @@ module Mynurse
     config.load_defaults 8.0
     config.autoload_lib(ignore: %w[assets tasks])
     config.i18n.default_locale = :ja ##日本語にする
-    config.action_dispatch.allow_browser = true
+    config.action_dispatch.allow_browser = true ##４０６エラー対応
   end
-  
 end

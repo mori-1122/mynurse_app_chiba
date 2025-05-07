@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # Users::SessionsControllerのguest_sign_inに遷移する
   devise_scope :user do
     post 'guest_sign_in', to: 'users/sessions#guest_sign_in'
+    get  'guest_sign_in', to: redirect('/') ##エラー対応
   end
 
   get "home/index"
