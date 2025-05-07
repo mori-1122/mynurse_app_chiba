@@ -1,9 +1,10 @@
-<div class="container d-flex align-items-center justify-content-center">   <%# container:Bootstrapのコンテナ（中央寄せ、余白調整） d-flex, align-items-center, justify-content-center: Flexboxで縦横中央寄せ%>
+<div class="container d-flex align-items-center justify-content-center min-vh-100">   <%# container:Bootstrapのコンテナ（中央寄せ、余白調整） d-flex, align-items-center, justify-content-center: Flexboxで縦横中央寄せ%>
   <div class="card shadow p-4 login-card"> <%# card:Bootstrapのカードコンポーネント login-card:独自スタイル%>
     <div class="text-center mb-4">
       <h2 class="text-pink">ログイン</h2>
       <p>マイナースへ入る</p>
     </div>
+    <%= render "devise/shared/error_messages", resource: resource %>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>    <%# Deviseログイン用フォーム resourceやresource_nameはDeviseが自動で用意する変数（例：User） %>
       <div class="mb-3"> <%# labelはフォームラベル email_field:メール入力欄%>
         <%= f.label :email, 'メールアドレス', class: 'form-label' %>
