@@ -18,6 +18,10 @@
   <!-- 導入ボタン -->
   <div class="mt-5">
     <%= link_to 'はじめる', new_user_registration_path, class: 'btn btn-lg btn-pink me-3' %>
-    <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-outline-secondary btn-lg' %>
+    <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-outline-secondary btn-lg me-3' %>
+    <%= link_to  'ゲストログイン', guest_sign_in_path,
+              method: :post,
+              class: 'btn btn-violet btn-lg me-3',
+              form_class: 'd-inline' %>
   </div>
 </div>
