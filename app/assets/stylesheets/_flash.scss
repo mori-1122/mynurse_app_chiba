@@ -9,7 +9,7 @@
     font-size: 0.95rem;
     font-weight: 600;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); // 影付きで浮き上がらせる
-    animation: fadeOut 2.5s forwards; // アニメーションで2.5秒後に消える
+    animation: fadeOut 5s forwards; // アニメーションで5秒後に消える
     color: white;
   }
   
@@ -29,3 +29,9 @@
     border: 1px solid #4fc3f7;
   }
   
+// フェードアウトのアニメーション定義
+@keyframes fadeOut {
+    0%   { opacity: 1; }  // 最初は表示
+    80%  { opacity: 1; }  // 80%の間は表示状態のまま
+    100% { opacity: 0; display: none; } // 最後に透明にして非表示にする
+  }
