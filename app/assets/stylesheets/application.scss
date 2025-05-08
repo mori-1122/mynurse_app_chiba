@@ -1,0 +1,12 @@
+// Entry point for your Sass build
+
+@import "bootstrap/scss/bootstrap"; //全体のスタイル
+@import "bootstrap-icons/font/bootstrap-icons"; //ブートストラップアイコン
+@import "base"; //ベースを読み込んだ
+@import "buttons"; //ボタンのスタイル
+@import "login"; //ログインスタイル
+@import "flash"; //フラッシュ
+
+.text-pink { //マイナースカラーにする
+    color: #f48fb1;
+  }

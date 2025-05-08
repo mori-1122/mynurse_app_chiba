@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  #  deviceを使ったユーザー認証
+  #  sessionsコントローラをオーバーライドし、自作ログイン処理（ゲスト対応など）を使えるようにする
+  devise_for :users, controllers: {
+    sessions: "users/sessions"
+  }
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # ゲストログインを仮ユーザーとしてログインさせる
+  # guest_sign_in という新しいルート（POSTメソッド）を追加
+  # Users::SessionsControllerのguest_sign_inに遷移する
+  devise_scope :user do
+    post "guest_sign_in", to: "users/sessions#guest_sign_in"
+    get  "guest_sign_in", to: redirect("/") # #エラー対応
+  end
+
+  get "home/index"
   get "up" => "rails/health#show", as: :rails_health_check
-
-  # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
-  # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-  # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
-
-  # Defines the root path route ("/")
-  # root "posts#index"
+  root to: "home#index"
 end
