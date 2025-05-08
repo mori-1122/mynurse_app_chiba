@@ -8,14 +8,9 @@ class ApplicationController < ActionController::Base # すべてのコントロ�
   # これ以降に書かれるメソッドは 継承先のコントローラからは使えるが、外部（URL）から呼び出せない。セキュリティ上の保護。
   protected
 
- # Deviseのリクエストに許可するパラメータ（フォームから受け取ってもOKなデータ）を追加設定するためのメソッド。
+  # Deviseのリクエストに許可するパラメータ（フォームから受け取ってもOKなデータ）を追加設定するためのメソッド。
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [ :name ])
+    devise_parameter_sanitizer.permit(:account_update, keys: [ :name ])
   end
 end
-
-
-
-
-

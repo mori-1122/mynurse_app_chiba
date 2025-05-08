@@ -9,5 +9,5 @@ class Notification < ApplicationRecord
 
   validates :user_id, presence: true
   validates :kind, presence: true
-  validates :active, inclusion: { in: [true, false] }
+  validates :active, inclusion: { in: [ true, false ] }
 end
