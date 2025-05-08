@@ -30,7 +30,7 @@
     <% if user_signed_in? %>
       <div class="login-user-banner">
         <p>こんにちは、<strong><%= current_user.name %></strong> さん</p>
-        <%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-pink btn-sm'%>
+        <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn btn-pink btn-sm'%>
       </div>
     <% end %>
       <% flash.each do |key, message| %>
